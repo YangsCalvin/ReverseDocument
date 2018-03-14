@@ -100,3 +100,30 @@ class-dump -H 陌陌.app文件的路径 -o 生成头文件存放的路径
 ![](./class-dump2.jpeg)
 
 5.分析
+------
+
+* 此时打开我们刚才导出的头文件找到我们之前分析到的`MDMainMomentViewController.h`文件
+
+![](./分析1.jpeg)
+
+![](./分析2.jpeg)
+这正是我们要切入的那个点，下边我们就开始编写Tweak进行分析。
+
+6.开始Hook
+------
+
+* 我们已经找到了切入点，下边我们就要Hook此方法然后通过oc语言的Rtuntime特性进行下断点分析。
+
+我们使用`MonkeyDev`使用的是[CaptainHook](https://github.com/rpetrich/CaptainHook)语法，如果你不太了解[CaptainHook](https://github.com/rpetrich/CaptainHook)语法的话你可以参考[CaptainHook语法](https://www.cnblogs.com/lkislam/p/4781011.html)文章.
+
+然后我们打开工程开始编写代码进行函数替换编写好的代码如下图会正向开发的下边代码都能看懂.
+
+![](./Hook2.jpeg)
+
+然后我们运行代码打开手机等待项目运行起来打开我们视频推荐列表然后下来一下然后App请求数据自然会走`startRequest`函数我们已经Hook了然后
+会停到我们下断点的地方这时候我们就开始下一步的分析.
+
+![](./Hook3.jpeg)
+
+* 我们已经找到了切入点，下边我们就要Hook此方法然后通过oc语言的Rtuntime特性进行下断点分析。是
+* 我们已经找到了切入点，下边我们就要Hook此方法然后通过oc语言的Rtuntime特性进行下断点分析。
