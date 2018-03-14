@@ -125,5 +125,28 @@ class-dump -H 陌陌.app文件的路径 -o 生成头文件存放的路径
 
 ![](./Hook3.jpeg)
 
-* 我们已经找到了切入点，下边我们就要Hook此方法然后通过oc语言的Rtuntime特性进行下断点分析。是
-* 我们已经找到了切入点，下边我们就要Hook此方法然后通过oc语言的Rtuntime特性进行下断点分析。
+从Log栏中我们可以发现视频模型的类型是`MDMomentItem *`类型的那么我们就从我们导出的陌陌头文件中找到此文件把他拖入到项目中然后引用他就可以了。
+
+![](./Hook4.jpeg)
+
+我们把存储数据的List数组遍历然后把视频的信息全部打印出了当然你也可以把数据发送到后台存储到服务器当中或者连接电脑直接储存到电脑上也是可以的。
+然后我们再次运行项目查看Log栏的打印，随便找个视频地址然后打开嗯不错完美Beautiful这不就正是我们想要的结果.
+
+![](./Hook5.jpeg)
+
+![](./Hook6.jpeg)
+
+你还可以参考别人的文章[初探iOS逆向工程+微信小牛试刀](http://blog.csdn.net/AirSars001/article/details/55189773),[移动App入侵与逆向破解技术－iOS篇](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577384&idx=1&sn=b44a9c9651bf09c5bea7e0337031c53c&scene=0#wechat_redirect)等等.
+如果你想更深入的了解逆向那么你还要学习ARM汇编语言等。
+
+7.总结
+------
+洋洋洒洒写了这么多，其实真正的步骤是很简单的，只是我比较啰嗦，想把每个步骤都尽量讲得详细一点。
+
+如果还有不清楚的地方，可以直接留言提问，或者直接到我的Github上提issue。
+
+当然，我也是新手，刚开始学习逆向，可能有些地方理解不准确或有错误，欢迎批评指证。
+
+再多啰嗦一句，这里讲的都是很浅很浅的东西，可以说跟逆向只能搭上一丢丢的边，如果你对逆向特别有兴趣的话，强烈
+
+推荐去看下这本书[iOS应用逆向工程](https://www.amazon.cn/gp/product/B00VFDVY7E/ref=as_li_tf_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B00VFDVY7E&linkCode=as2&tag=buginux-23)。
